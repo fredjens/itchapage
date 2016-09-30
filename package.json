@@ -1,0 +1,26 @@
+{
+  "name": "node-web-scraper",
+  "version": "1.0.0",
+  "description": "Scrape title, intro and image",
+  "main": "server.js",
+  "author": "Fredrik Jensen",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "latest",
+    "request": "latest",
+    "scrape-url": "^3.0.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredjens/web-scraper.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fredjens/web-scraper/issues"
+  },
+  "homepage": "https://github.com/fredjens/web-scraper#readme"
+}

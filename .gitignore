@@ -1,0 +1,30 @@
+# Build folders #
+css-stats/
+.publish
+dist
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Scss Cache #
+######################
+.scssc
+.sass-cache
+assets/img/resized/*
+
+# NPM #
+######################
+node_modules/
+npm-debug.log
+
+# Sublime Text #
+######################
+*.sublime-project
+*.sublime-workspace
