@@ -1,4 +1,4 @@
-# :hamster: Itch a page
+# :mouse: Itch a page
 
 Itch a page is a simple API To scrape title, intro and image from an webpage.
 
