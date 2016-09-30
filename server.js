@@ -39,5 +39,5 @@ router.get('/', function(req, res) {
 
 app.use('/', router);
 
-app.listen('8081')
-console.log('Magic happens on port 8081');
+app.listen(port)
+console.log('Magic happens on ' + port);
