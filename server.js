@@ -11,10 +11,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 router.get('/', function(req, res) {
-    res.end("Itch a page");
+    res.send("Itch a page");
 });
 
-router.get('/itch/', function(req, res) {
+router.get('/itch', function(req, res) {
     var url = req.query.url;
 
     if (url.length > 8) {
@@ -45,7 +45,7 @@ router.get('/itch/', function(req, res) {
             }
         })
     } else {
-        res.end('enter a correct url');
+        res.send('enter a correct url');
     }
 });
 
