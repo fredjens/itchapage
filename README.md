@@ -6,7 +6,7 @@ Itch a page is a simple API To scrape title, intro and image from an webpage usi
 
 Url: Need to be a full url, i.e.: `https://medium.com/front-end-hacking/react-for-designers-3fbc7b6560dd#.9kman3j7w`
 
-[Test request](http://itchapage.herokuapp.com/itch?url=http://iallenkelhet.no/2016/01/14/cookie-advarselen-ma-doy/)
+[Test request](http://itchapage.herokuapp.com/itch?urlhttps://medium.com/front-end-hacking/react-for-designers-3fbc7b6560dd#.9kman3j7w)
 
 ## Dependencies
 * NodeJS
