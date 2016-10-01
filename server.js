@@ -42,13 +42,13 @@ router.get('/itch/', function(req, res) {
                     });
                 });
             }
-        });
+        })
     } else {
-        res.end('url is not correct');
+        res.end('enter a correct url');
     }
 });
 
 app.use('/', router);
 
-app.listen(port)
+app.listen(port);
 console.log('Magic happens on ' + port);
