@@ -35,7 +35,6 @@ router.get('/itch', function(req, res) {
                     var title = null;
                     if (h1.length > 0) {
                         title = h1[0].text().replace(/(\r\n|\n|\r|\t)/gm,"");
-
                     }
                     res.json({
                         title: title,

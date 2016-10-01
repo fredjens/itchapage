@@ -1,5 +1,5 @@
 {
-  "name": "node-web-scraper",
+  "name": "itchapage",
   "version": "1.0.0",
   "description": "Scrape title, intro and image",
   "main": "server.js",
@@ -7,6 +7,7 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "latest",
+    "open-graph": "^0.2.1",
     "request": "latest",
     "scrape-url": "^3.0.0"
   },
@@ -16,11 +17,11 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fredjens/web-scraper.git"
+    "url": "git+https://github.com/fredjens/itchapage.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fredjens/web-scraper/issues"
+    "url": "https://github.com/fredjens/itchapage/issues"
   },
-  "homepage": "https://github.com/fredjens/web-scraper#readme"
+  "homepage": "https://github.com/fredjens/itchapage#readme"
 }
