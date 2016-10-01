@@ -1,6 +1,6 @@
 # :mouse: Itch a page
 
-Itch a page is a simple API To scrape title, intro and image from an webpage.
+Itch a page is a simple API To scrape title, intro and image from an webpage using Open Graph.
 
 [http://itchapage.herokuapp.com/?url=your_url](http://simple-scrape.herokuapp.com/?url=your_url)
 
@@ -11,4 +11,4 @@ Url: Need to be a full url, i.e.: `https://medium.com/front-end-hacking/react-fo
 ## Dependencies
 * NodeJS
 * Express
-* [scrape-url](https://www.npmjs.com/package/scrape-url)
+* [open-graph](https://www.npmjs.com/package/open-graph)

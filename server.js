@@ -1,7 +1,7 @@
 var express = require('express');
-var scrape = require('scrape-url');
 var bodyParser = require('body-parser');
-
+var og = require('open-graph');
+var scrape = require('scrape-url');
 var app = express();
 const port = process.env.PORT || 8080;
 const router = express.Router();
@@ -10,30 +10,41 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 router.get('/', function(req, res) {
+    res.end("Itch a page");
+});
+
+router.get('/itch/', function(req, res) {
     var url = req.query.url;
 
-    var title = '';
-    var intro = '';
-    var image = '';
-
     if (url.length > 8) {
-        scrape(url, ['h1','p', 'img'], function (error, title, intro, image) {
-            if(error) {
-                console.log(error);
+        og(url, function(err, meta) {
+            if (meta.title) {
+                var image = null;
+                if (meta.image) {
+                    image = meta.image.url;
+                }
+                res.json({
+                    title: meta.title,
+                    intro: meta.description,
+                    image:  image,
+                    source:  meta.url
+                })
+            } else {
+                scrape(url, ['h1'], function (err, h1) {
+                    var title = null;
+                    if (h1.length > 0) {
+                        title = h1[0].text().replace(/(\r\n|\n|\r|\t)/gm,"");
+
+                    }
+                    res.json({
+                        title: title,
+                        source:  url
+                    });
+                });
             }
-
-            var title = title[0].text().replace(/(\r\n|\n|\r|\t)/gm,"");
-            var intro = intro[0].text().replace(/(\r\n|\n|\r|\t)/gm,"");
-            var image = image[0][0].attribs.src;
-
-            res.json({
-                title: title,
-                intro: intro,
-                image: image
-            });
         });
     } else {
-        console.log('nothing...');
+        res.end('url is not correct');
     }
 });
 
