@@ -65,12 +65,16 @@ router.get('/itch', function(req, res) {
 
     if (!url) {
         console.log('🐭 no url');
-        return res.status(500).send({ error: '🐭 enter a correct url' });
+        res.json(500, {
+           error: '🐭 enter a correct url'
+        });
     }
 
     if (url.length < 2) {
         console.log('🐭 to short url');
-        return res.status(500).send({ error: '🐭 enter a correct url' });
+        res.json(500, {
+           error: '🐭 enter a correct url'
+        });
     }
 
     /**
@@ -83,12 +87,16 @@ router.get('/itch', function(req, res) {
         scrape(url, ['h1'], function (err, h1) {
             if (err) {
                 console.log('🐭 invalud url when trying to scrape ', err);
-                return res.status(500).send({ error: '🐭 did not manage to scrape' });
+                res.json(500, {
+                   error: '🐭 did not manage to scrape'
+                });
             }
 
             if (!h1) {
                 console.log('🐭 no title found');
-                return res.status(500).send({ error: '🐭 no title found' });
+                res.json(500, {
+                   error: '🐭 no title found'
+                });
             }
 
             /**
@@ -104,7 +112,9 @@ router.get('/itch', function(req, res) {
 
             if (!title) {
                 console.log('🐭 no title');
-                return res.status(500).send({ error: '🐭 did not find anyting here...'});
+                res.json(500, {
+                    error: '🐭 did not find anyting here...'
+                });
             }
 
             res.json({
@@ -125,7 +135,9 @@ router.get('/itch', function(req, res) {
     return og(url, function(err, meta) {
         if (err) {
             console.log('🐭 invalid url');
-            return res.status(500).send({ error: '🐭 enter a correct url' });
+            res.json(500, {
+                error: '🐭 enter a correct url'
+            });
         }
 
         if (!meta.title) {
