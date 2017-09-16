@@ -4,17 +4,6 @@
   "description": "Scrape title, intro and image",
   "main": "server.js",
   "author": "Fredrik Jensen",
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "latest",
-    "open-graph": "^0.2.1",
-    "request": "latest",
-    "scrape-url": "^3.0.0"
-  },
-  "scripts": {
-    "start": "node server"
-  },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fredjens/itchapage.git"
@@ -23,5 +12,22 @@
   "bugs": {
     "url": "https://github.com/fredjens/itchapage/issues"
   },
-  "homepage": "https://github.com/fredjens/itchapage#readme"
+  "homepage": "https://github.com/fredjens/itchapage#readme",
+  "scripts": {
+    "start": "node src/server",
+    "dev": "nodemon src/server"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "latest",
+    "open-graph": "^0.2.1",
+    "request": "latest",
+    "scrape-url": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "engines": {
+    "node": "8.1.x"
+  }
 }
