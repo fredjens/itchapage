@@ -46,10 +46,14 @@ router.get('/itch', function(req, res) {
     /**
      * Fix the source
      */
-    let sourceUrl = url;
+    let sourceUrl;
 
-    if (!sourceUrl.startsWith("http://") || !sourceUrl.startsWith("https://")) {
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+        console.log('contains http or https', url);
+        sourceUrl = url;
+    } else {
         sourceUrl = `http://${url}`;
+        console.log('adding http', sourceUrl);
     }
 
     const domain = url
@@ -119,7 +123,6 @@ router.get('/itch', function(req, res) {
 
             res.json({
                 title: title,
-                source,
                 source: {
                     url: sourceUrl,
                     domain,
